@@ -5,12 +5,12 @@
 
 int main()
 {
-    Rect rect(5, 5, 10, 2);
-    Button button(rect, GREEN_NO_FLASH);
+    Rect rect(5, 5, 10, 4);
+    Button button(rect, GREEN_NO_FLASH, false);
     console::clear();
     Cursor cursor;
     Rect r2(0, 0, 4, 4);
-    Button b2(r2, RED_NO_FLASH);
+    Button b2(r2, RED_NO_FLASH, false);
     b2.blit(cursor);
     button.blit(cursor);
     std::cout << "\n";
