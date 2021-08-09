@@ -8,7 +8,7 @@ namespace console
     {
         // Moves the cursor the the specified (x, y) position.
         // The (0, 0) lies at the top left corner.
-        printf("\033[%d;%dH", y, x);
+        printf("\033[%d;%dH", y + 1, x + 1);
     }
     void clear()
     {
