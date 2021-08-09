@@ -1,12 +1,12 @@
 class Rect
 {
 public:
-    int x;
-    int y;
-    int width;
-    int height;
+    int x;      // X coordinate of the top left vortex
+    int y;      // Y coordinate of the top left vortex
+    int width;  // Horizontal length of the rect
+    int height; // Vertical length of the rect
     Rect()
-    {
+    { // Default constructor
     }
     Rect(int x, int y, int width, int height)
     {

@@ -9,17 +9,16 @@
 class Button
 {
 public:
-    Rect rect;
-    char fill_color[8];
-    bool fill;
-    // static List<Button> buttons;
+    Rect rect;          // Rect used to define the position and size of the button.
+    char fill_color[8]; // The color of the button.
+    bool fill;          // true if color should be filled inside the button, false if color should be only on the edge.
     Button()
-    {
+    { // Default constructor.
     }
     Button(const Button &btn)
     {
         rect = btn.rect;
-        memmove(this->fill_color, btn.fill_color, 8UL);
+        memmove(fill_color, btn.fill_color, 8UL); // copying btn.fill_color to fill_color
         fill = btn.fill;
     }
     Button(Button &btn, bool fill = true)
@@ -28,15 +27,13 @@ public:
         memmove(this->fill_color, btn.fill_color, 8UL);
         fill = fill;
     }
-    Button(Rect rect, char fill_color[8] = "\033[0;32m", bool fill = true)
+    Button(Rect rect, char fill_color[8] = "\033[0m", bool fill = true)
     {
         this->rect = rect;
         this->fill = fill;
         memmove(this->fill_color, fill_color, 8UL);
-
-        // buttons.append(Button(rect, fill_color));
     }
-    void blit(Cursor cursor)
+    void blit(Cursor cursor) // To display the button on the terminal screen.
     {
         cursor.reset();
         for (int x = rect.x; x < rect.x + rect.width; x++)
